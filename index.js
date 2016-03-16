@@ -19,7 +19,10 @@ module.exports={name:"console", "triggers":[{name:"on data",fields:[{name:"tty",
                 console.log(stdout);
                 if(error)
                     console.log(error);
-            }).on('exit', function(){ complete(); });
+            }).on('exit', function(){ 
+                if(complete)
+                    complete();
+            });
         };
         result.fields=fields;
         return result;
